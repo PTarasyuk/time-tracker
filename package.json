@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix",
+    "lint": "eslint src --ext .vue,.js,.jsx,.ts,.cjs,.mjs --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "@eslint/js": "^9.36.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.36.0",
     "eslint-plugin-vue": "^10.5.0",
