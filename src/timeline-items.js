@@ -23,10 +23,7 @@ watch(now, (after, before) => {
 export function initializeTimelineItems(state) {
   const lastActiveAt = new Date(state.lastActiveAt)
 
-  timelineItems.value =
-    state.timelineItems.length === 0 ? generateTimelineItems() : state.timelineItems
-
-  // timelineItems.value = state.timelineItems ?? generateTimelineItems()
+  timelineItems.value = state.timelineItems ?? generateTimelineItems()
 
   if (activeTimelineItem.value && isToday(lastActiveAt)) {
     syncIdleSeconds(lastActiveAt)
