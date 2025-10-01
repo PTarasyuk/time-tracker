@@ -1,9 +1,9 @@
-import { activities, initializeActivities } from '@/activities'
-import { LOCAL_STORAGE_KEY } from '@/constants'
-import { today } from '@/time'
-import { startTimelineItemTimer, stopTimelineItemTimer } from '@/timeline-item-timer'
-import { activeTimelineItem, initializeTimelineItems, timelineItems } from '@/timeline-items'
-import type { State } from '@/types'
+import { activities, initializeActivities } from './activities'
+import { LOCAL_STORAGE_KEY } from './constants'
+import { today } from './time'
+import { startTimelineItemTimer, stopTimelineItemTimer } from './timeline-item-timer'
+import { activeTimelineItem, initializeTimelineItems, timelineItems } from './timeline-items'
+import type { State } from './types'
 
 export function syncState(shouldLoad: boolean = true): void {
   shouldLoad ? loadState() : saveState()

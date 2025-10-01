@@ -1,6 +1,6 @@
-import { HUNDRED_PERCENT } from '@/constants'
-import type { Activity, ActivitySelectOption } from '@/types'
 import { computed, ref } from 'vue'
+import { HUNDRED_PERCENT } from './constants'
+import type { Activity, ActivitySelectOption } from './types'
 
 export const activities = ref<Activity[]>([])
 

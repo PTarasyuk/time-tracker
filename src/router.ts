@@ -1,11 +1,11 @@
-import { PAGE_ACTIVITIES, PAGE_PROGRESS, PAGE_TIMELINE } from '@/constants'
-import type { PageName } from '@/types'
-import { isPageValid } from '@/validators'
 import type { Component } from 'vue'
 import { ref } from 'vue'
+import { PAGE_ACTIVITIES, PAGE_PROGRESS, PAGE_TIMELINE } from './constants'
 import TheActivities from './pages/TheActivities.vue'
 import TheProgress from './pages/TheProgress.vue'
 import TheTimeline from './pages/TheTimeline.vue'
+import type { PageName } from './types'
+import { isPageValid } from './validators'
 
 export const routes: Record<PageName, Component> = {
   [PAGE_TIMELINE]: TheTimeline,

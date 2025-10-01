@@ -1,11 +1,11 @@
+import type { Ref } from 'vue'
+import { computed, ref } from 'vue'
 import {
   HUNDRED_PERCENT,
   MILLISECONDS_IN_SECOND,
   SECONDS_IN_DAY,
   SECONDS_IN_HOUR,
-} from '@/constants'
-import type { Ref } from 'vue'
-import { computed, ref } from 'vue'
+} from './constants'
 
 export const now: Ref<Date> = ref<Date>(today())
 

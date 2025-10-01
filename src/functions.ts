@@ -1,12 +1,12 @@
 import {
-  MILLISECONDS_IN_SECOND,
-  SECONDS_IN_MINUTE,
-  MINUTES_IN_HOUR,
+  HUNDRED_PERCENT,
   LOW_PERCENT,
   MEDIUM_PERCENT,
-  HUNDRED_PERCENT,
-} from '@/constants'
-import { isNull } from '@/validators'
+  MILLISECONDS_IN_SECOND,
+  MINUTES_IN_HOUR,
+  SECONDS_IN_MINUTE,
+} from './constants'
+import { isNull } from './validators'
 
 enum ProgressColorClass {
   RED = 'bg-red-500',
