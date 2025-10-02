@@ -1,14 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { nextTick, ref } from 'vue'
-import { ICON_PLUS } from '@/icons'
-import { id } from '@/functions'
-import { createActivity } from '@/activities'
-import BaseButton from '@/components/BaseButton.vue'
+import { createActivity } from '../activities'
+import BaseButton from '../components/BaseButton.vue'
+import { id } from '../functions'
+import { ICON_PLUS } from '../icons'
 import BaseIcon from './BaseIcon.vue'
 
 const name = ref('')
 
-async function submit() {
+async function submit(): Promise<void> {
   createActivity({
     id: id(),
     name: name.value,
