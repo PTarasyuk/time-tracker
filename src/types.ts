@@ -27,7 +27,7 @@ export interface TimelineItem {
 
 export interface NavItem {
   page: PageName
-  icon: any
+  icon: string
 }
 
 export interface Activity {
