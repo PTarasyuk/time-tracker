@@ -1,11 +1,10 @@
 import type { Component } from 'vue'
 import { ref } from 'vue'
-import { PAGE_ACTIVITIES, PAGE_PROGRESS, PAGE_TIMELINE } from './constants'
+import { NAV_ITEMS, PAGE_ACTIVITIES, PAGE_PROGRESS, PAGE_TIMELINE } from './constants'
 import TheActivities from './pages/TheActivities.vue'
 import TheProgress from './pages/TheProgress.vue'
 import TheTimeline from './pages/TheTimeline.vue'
 import type { PageName } from './types'
-import { isPageValid } from './validators'
 
 export const routes: Record<PageName, Component> = {
   [PAGE_TIMELINE]: TheTimeline,
@@ -23,7 +22,7 @@ export function navigate(page: PageName): void {
 export function normalizePageHash(): PageName {
   const page = window.location.hash.slice(1)
 
-  if (isPageValid(page)) {
+  if (NAV_ITEMS.some((navItem): boolean => navItem.page === page)) {
     return page as PageName
   }
 
