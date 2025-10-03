@@ -2,11 +2,10 @@
 import { computed } from 'vue'
 import { BUTTON_TYPE_NEUTRAL } from '../constants'
 import { normalizeSelectValue } from '../functions'
-import { ICON_XMARK } from '../icons'
+import { IconName, type SelectOption } from '../types'
 import { isUndefinedOrNull } from '../validators'
 import BaseButton from './BaseButton.vue'
 import BaseIcon from './BaseIcon.vue'
-import type { SelectOption } from '../types'
 
 const props = defineProps<{
   options: SelectOption<T>[]
@@ -28,7 +27,7 @@ function select(value: string | null): void {
 <template>
   <div class="flex gap-2">
     <BaseButton :type="BUTTON_TYPE_NEUTRAL" @click="select(null)">
-      <BaseIcon :name="ICON_XMARK" />
+      <BaseIcon :name="IconName.XMARK" />
     </BaseButton>
     <select
       class="w-full truncate rounded bg-gray-100 px-2 py-1 text-2xl"
