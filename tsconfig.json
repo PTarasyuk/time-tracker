@@ -5,10 +5,12 @@
     "noEmit": true,
     "allowJs": true,
     "target": "ES2020",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "types": ["node"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }
