@@ -1,11 +1,3 @@
-import {
-  BUTTON_TYPE_DANGER,
-  BUTTON_TYPE_NEUTRAL,
-  BUTTON_TYPE_PRIMARY,
-  BUTTON_TYPE_SUCCESS,
-  BUTTON_TYPE_WARNING,
-} from './constants'
-
 export type Hour =
   | 0
   | 1
@@ -51,12 +43,13 @@ export enum PageName {
   PROGRESS = 'progress',
 }
 
-export type ButtonType =
-  | typeof BUTTON_TYPE_PRIMARY
-  | typeof BUTTON_TYPE_SUCCESS
-  | typeof BUTTON_TYPE_WARNING
-  | typeof BUTTON_TYPE_NEUTRAL
-  | typeof BUTTON_TYPE_DANGER
+export enum ButtonType {
+  PRIMARY = 'primary',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  NEUTRAL = 'neutral',
+  DANGER = 'danger',
+}
 
 export interface TimelineItem {
   hour: Hour
