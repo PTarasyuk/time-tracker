@@ -1,9 +1,10 @@
 import { HUNDRED_PERCENT, LOW_PERCENT, MEDIUM_PERCENT } from '@/constants'
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import {
   formatSeconds,
   formatSecondsWithSign,
   getProgressColorClass,
+  id,
   normalizeSelectValue,
 } from '../src/functions'
 import { ProgressColorClass } from '../src/types'
@@ -47,4 +48,8 @@ it('gets progress color class', () => {
   expect(getProgressColorClass(100)).toBe(ProgressColorClass.GREEN)
 })
 
-it.todo('generates id')
+it('generates id', () => {
+  vi.spyOn(Date, 'now').mockReturnValueOnce(1)
+  vi.spyOn(Math, 'random').mockReturnValueOnce(10000)
+  expect(id()).toBe('1s')
+})
