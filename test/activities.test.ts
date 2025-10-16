@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, test } from 'vitest'
 import { calculateActivityCompletionPercentage, updateActivity } from '../src/activities'
 import { HUNDRED_PERCENT, SECONDS_IN_HOUR } from '../src/constants'
 import type { Activity } from '../src/types'
@@ -31,14 +31,10 @@ describe('updateActivity', () => {
   })
 })
 
-it('calculate activity completion percentage', () => {
-  expect(calculateActivityCompletionPercentage(activity, SECONDS_IN_HOUR * 0)).toBe(
-    HUNDRED_PERCENT * 0
-  )
-  expect(calculateActivityCompletionPercentage(activity, SECONDS_IN_HOUR * 0.5)).toBe(
-    HUNDRED_PERCENT * 0.5
-  )
-  expect(calculateActivityCompletionPercentage(activity, SECONDS_IN_HOUR * 1)).toBe(
-    HUNDRED_PERCENT * 1
-  )
+test.each([
+  [SECONDS_IN_HOUR * 0, HUNDRED_PERCENT * 0],
+  [SECONDS_IN_HOUR * 0.5, HUNDRED_PERCENT * 0.5],
+  [SECONDS_IN_HOUR * 1, HUNDRED_PERCENT * 1],
+])('calculateActivityCompletionPercentage(%i) -> %i', (trackedSeconds, percentage) => {
+  expect(calculateActivityCompletionPercentage(activity, trackedSeconds)).toBe(percentage)
 })
