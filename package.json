@@ -13,6 +13,7 @@
     "lint": "eslint src --ext .vue,.js,.jsx,.ts,.cjs,.mjs --fix",
     "format": "prettier --write src/",
     "test": "vitest",
+    "test:run": "vitest run",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage"
   },

@@ -1,28 +1,28 @@
-import { expect, it, test, vi } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { MILLISECONDS_IN_SECOND } from '../src/constants'
 import { endOfHour, isToday, today, tomorrow, toSeconds } from '../src/time'
 
-test.each([
+it.each([
   [new Date('1990-01-01'), new Date('1990-01-01')],
   [new Date('2025-10-07'), new Date('2025-10-07')],
   [new Date('2030-05-12'), new Date('2030-05-12')],
-])('today(%o) -> %o', (date, expectedDate) => {
+])('returns current date: %o', (date, expectedDate) => {
   vi.setSystemTime(date)
   expect(today()).toEqual(expectedDate)
   vi.useRealTimers()
 })
 
-test.each([
+it.each([
   [new Date('1990-01-01'), new Date('1990-01-02')],
   [new Date('2025-10-07'), new Date('2025-10-08')],
   [new Date('2030-05-12'), new Date('2030-05-13')],
-])('tomorrow(%o) -> %o', (date, expectedDate) => {
+])('returns date of tomorrow: %o', (date, expectedDate) => {
   vi.setSystemTime(date)
   expect(tomorrow()).toEqual(expectedDate)
   vi.useRealTimers()
 })
 
-test.each([
+it.each([
   [new Date('2024-04-10T10:15:00'), new Date('2024-04-10T11:00:00')],
   [new Date('2024-04-10T20:00:00'), new Date('2024-04-10T21:00:00')],
   [new Date('2024-04-10T23:59:00'), new Date('2024-04-11T00:00:00')],
@@ -42,7 +42,7 @@ it('checks if passed date is today', () => {
   vi.useRealTimers()
 })
 
-test.each([
+it.each([
   [-MILLISECONDS_IN_SECOND * 10, -10],
   [-MILLISECONDS_IN_SECOND * 1, -1],
   [MILLISECONDS_IN_SECOND * 0, 0],

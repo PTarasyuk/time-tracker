@@ -5,7 +5,7 @@ import {
   resetTimelineItemActivities,
   updateTimelineItem,
 } from '../src/timeline-items'
-import type { Activity, Hour, TimelineItem } from '../src/types'
+import type { Activity, TimelineItem } from '../src/types'
 
 describe('updateTimelineItem', () => {
   const updatedFields: TimelineItem = {

@@ -1,8 +1,8 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +15,7 @@ export default defineConfig({
   test: {
     coverage: {
       reporter: ['text', 'html'],
-      enabled: true,
+      // enabled: true,
     },
     // reporters: ['junit', 'json', 'html', 'verbose'],
     // outputFile: {
