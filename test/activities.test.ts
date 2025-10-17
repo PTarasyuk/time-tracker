@@ -38,3 +38,26 @@ test.each([
 ])('calculateActivityCompletionPercentage(%i) -> %i', (trackedSeconds, percentage) => {
   expect(calculateActivityCompletionPercentage(activity, trackedSeconds)).toBe(percentage)
 })
+
+// test.each([
+//   { trackedSeconds: SECONDS_IN_HOUR * 0, percentage: HUNDRED_PERCENT * 0 },
+//   { trackedSeconds: SECONDS_IN_HOUR * 0.5, percentage: HUNDRED_PERCENT * 0.5 },
+//   { trackedSeconds: SECONDS_IN_HOUR * 1, percentage: HUNDRED_PERCENT * 1 },
+// ])(
+//   'calculateActivityCompletionPercentage($trackedSeconds) -> $percentage',
+//   ({ trackedSeconds, percentage }) => {
+//     expect(calculateActivityCompletionPercentage(activity, trackedSeconds)).toBe(percentage)
+//   }
+// )
+
+// test.each`
+//   trackedSeconds           | percentage
+//   ${SECONDS_IN_HOUR * 0}   | ${HUNDRED_PERCENT * 0}
+//   ${SECONDS_IN_HOUR * 0.5} | ${HUNDRED_PERCENT * 0.5}
+//   ${SECONDS_IN_HOUR * 1}   | ${HUNDRED_PERCENT * 1}
+// `(
+//   'calculateActivityCompletionPercentage($trackedSeconds) -> $percentage',
+//   ({ trackedSeconds, percentage }) => {
+//     expect(calculateActivityCompletionPercentage(activity, trackedSeconds)).toBe(percentage)
+//   }
+// )
