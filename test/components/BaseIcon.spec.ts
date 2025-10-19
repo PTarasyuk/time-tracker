@@ -1,6 +1,7 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { expect, it } from 'vitest'
 import BaseIcon from '../../src/components/BaseIcon.vue'
+import { ICONS } from '../../src/icons'
 import { IconName } from '../../src/types'
 
 it('renders icon default classes', () => {
@@ -19,4 +20,12 @@ it('renders icon default classes', () => {
   })
 
   expect(wrapper.classes().join(' ')).toBe(classes)
+})
+
+it.each(Object.keys(ICONS))('renders %s icon', (name) => {
+  const wrapper = mount(BaseIcon, {
+    props: { name: name as IconName },
+  })
+
+  expect(wrapper.html()).toMatchSnapshot()
 })
