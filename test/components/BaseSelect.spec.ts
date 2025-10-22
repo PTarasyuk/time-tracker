@@ -50,3 +50,31 @@ it('renders select with options', () => {
     expect(wrapper.find('select').text()).toContain(label)
   })
 })
+
+it('fires "select" event when option is selected', () => {
+  const wrapper = shallowMount(BaseSelect, {
+    props: {
+      placeholder: '',
+      selected: null,
+      options: [],
+    },
+  })
+
+  wrapper.find('select').trigger('change')
+
+  expect(wrapper.emitted().select).toHaveLength(1)
+})
+
+it('fires "select" event when reset button is pressed', () => {
+  const wrapper = mount(BaseSelect, {
+    props: {
+      placeholder: '',
+      selected: null,
+      options: [],
+    },
+  })
+
+  wrapper.find('button').trigger('click')
+
+  expect(wrapper.emitted().select).toHaveLength(1)
+})
