@@ -29,3 +29,12 @@ it('creates activity after form submission', () => {
   })
   vi.resetAllMocks()
 })
+
+it('disable submit button after form submission', async () => {
+  const wrapper = mount(TheActivityForm)
+
+  await wrapper.find('input').setValue('Reading')
+  expect(wrapper.find('button').attributes()).not.toHaveProperty('disabled')
+  await wrapper.find('form').trigger('submit')
+  expect(wrapper.find('button').attributes()).toHaveProperty('disabled')
+})
