@@ -13,6 +13,23 @@ export default defineConfig({
     },
   },
   test: {
+    projects: [
+      {
+        extends: true,
+        test: {
+          include: ['test/**/*.{test,spec}.{ts,tsx,js,jsx}'],
+          exclude: ['test/components/**/*.{test,spec}.{ts,tsx,js,jsx}'],
+          environment: 'node',
+        },
+      },
+      {
+        extends: true,
+        test: {
+          include: ['test/components/**/*.{test,spec}.{ts,tsx,js,jsx}'],
+          environment: 'happy-dom',
+        },
+      },
+    ],
     coverage: {
       reporter: ['text', 'html'],
       // enabled: true,
